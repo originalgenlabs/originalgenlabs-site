@@ -15,19 +15,19 @@ export const navigation = [
 
 export const skypadFeatures = [
   {
-    title: "Native by design",
-    description: "An iPad-first interface designed around spacious navigation, touch, and focused reading.",
+    title: "Made for iPad",
+    description: "Spacious navigation, natural touch interaction, and focused reading from the start.",
   },
   {
-    title: "Your network, your way",
-    description: "Move naturally between Following, Discover, and Video without losing your place.",
+    title: "Built for discovery",
+    description: "Move naturally through your network, emerging conversations, and what matters now.",
   },
   {
-    title: "More signal",
-    description: "Trends, News, and Chats bring discovery and conversation into one considered workspace.",
+    title: "Media first",
+    description: "Images and video stay close to the conversation in a fast, visual browsing experience.",
   },
   {
-    title: "Media at full speed",
-    description: "Fast, media-first browsing keeps images and video close to the conversation.",
+    title: "Connected",
+    description: "News, trends, and chats meet in one calm, considered space.",
   },
 ] as const;
