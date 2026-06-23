@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowUpRight, Check, Copy } from "lucide-react";
+import { Check, Copy } from "lucide-react";
 
 export function CallbackClient() {
   const [copied, setCopied] = useState(false);
@@ -18,5 +19,5 @@ export function CallbackClient() {
     window.setTimeout(() => setCopied(false), 1800);
   }
 
-  return <main className="callback-main"><section className="callback-panel" aria-live="polite"><div className="callback-icon"><ArrowUpRight size={25} /></div><p className="eyebrow">SkyPad authorization</p><h1>Opening SkyPad…</h1><p>Authorization complete. Returning you to the app.</p><div className="callback-actions"><a className="button button-primary" href={appUrl}>Open SkyPad <ArrowUpRight size={17} /></a><button className="button button-secondary" type="button" onClick={copyLink}>{copied ? <Check size={17} /> : <Copy size={17} />}{copied ? "Copied" : "Copy Link"}</button></div><p className="copy-status">{copied ? "Authorization link copied." : "If SkyPad does not open, use one of the options above."}</p></section></main>;
+  return <main className="callback-main"><section className="callback-panel" aria-live="polite"><div className="callback-orb" aria-hidden="true"><Image src="/apps/skypad/skypad-bird-logo.png" alt="" width={768} height={768} priority /></div><p className="eyebrow">SKYPAD AUTHORIZATION</p><h1>Returning to SkyPad</h1><p className="callback-subtitle">Authorization is complete. SkyPad will reopen automatically.</p><p className="callback-helper">If SkyPad does not open, use one of the options below.</p><div className="callback-actions"><a className="button button-primary" href={appUrl}>Open SkyPad</a><button className="button button-secondary" type="button" onClick={copyLink}>{copied ? <Check size={17} /> : <Copy size={17} />}{copied ? "Copied" : "Copy Link"}</button></div><p className="copy-status">{copied ? "Authorization link copied." : ""}</p></section></main>;
 }
