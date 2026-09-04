@@ -14,7 +14,7 @@ export function SiteHeader() {
           {navigation.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
         </nav>
         <details className="mobile-nav">
-          <summary aria-label="Open navigation"><Menu size={21} /></summary>
+          <summary aria-label="Open navigation"><Menu size={21} aria-hidden="true" /></summary>
           <nav aria-label="Mobile navigation">
             {navigation.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
           </nav>

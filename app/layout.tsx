@@ -6,15 +6,16 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: "Original Gen Labs", template: "%s | Original Gen Labs" },
+  title: { default: "Original Gen Labs — Premium Apps Crafted with Purpose", template: "%s | Original Gen Labs" },
   description: site.description,
   alternates: { canonical: "/" },
-  openGraph: { title: site.name, description: site.description, url: site.url, siteName: site.name, type: "website" },
-  twitter: { card: "summary_large_image", title: site.name, description: site.description },
+  icons: { icon: "/icon.svg" },
+  openGraph: { title: "Original Gen Labs — Premium Apps Crafted with Purpose", description: site.description, url: site.url, siteName: site.name, type: "website" },
+  twitter: { card: "summary", title: "Original Gen Labs — Premium Apps Crafted with Purpose", description: site.description },
 };
 
-export const viewport: Viewport = { themeColor: "#f7fafc", colorScheme: "light" };
+export const viewport: Viewport = { themeColor: "#071120", colorScheme: "dark" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><SiteHeader />{children}<SiteFooter /></body></html>;
+  return <html lang="en" data-scroll-behavior="smooth"><body><SiteHeader />{children}<SiteFooter /></body></html>;
 }
