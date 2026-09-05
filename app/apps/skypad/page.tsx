@@ -78,7 +78,7 @@ export default function SkyPadPage() {
         <div className="shell skypad-hero-grid">
           <div className="skypad-hero-copy">
             <div className="product-lockup">
-              <Image src="/apps/skypad/skypad-bird-logo.png" alt="SkyPad Social" width={72} height={72} priority unoptimized />
+              <span className="product-lockup-icon"><Image src="/apps/skypad/skypad-bird-logo.png" alt="SkyPad Social" width={72} height={72} priority unoptimized /></span>
               <span>SkyPad Social</span>
             </div>
             <p className="eyebrow">A premium client for Bluesky, crafted for iPhone</p>
