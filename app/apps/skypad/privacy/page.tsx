@@ -17,6 +17,7 @@ export default function PrivacyPage() {
       eyebrow="SkyPad Social"
       title="Privacy Policy"
       intro="This policy explains how SkyPad Social processes information when you use the app, what stays on your iPhone and when third-party services receive data."
+      effectiveDate="September 5, 2026"
       sections={[
         {
           title: "1. Who operates SkyPad Social",
@@ -44,7 +45,7 @@ export default function PrivacyPage() {
         },
         {
           title: "7. GIF search, Apple features and external links",
-          content: <><p>Online GIF search is provided through Bluesky&apos;s GIF service and KLIPY. Search terms, pagination values, device locale, IP address and selected GIF requests may be processed by those services. SkyPad does not require a separate KLIPY account. Review <a href={externalLinks.klipyPrivacy} target="_blank" rel="noopener noreferrer">KLIPY&apos;s Privacy Policy</a>.</p><p>SkyPad uses Apple frameworks for language detection, translation, link previews, secure storage and local notifications. Translation text is passed to Apple&apos;s Translation framework; supported resources and any system-level processing are controlled by iOS. Review <a href={externalLinks.applePrivacy} target="_blank" rel="noopener noreferrer">Apple&apos;s Privacy Policy</a>.</p><p>Opening a publisher link or other external website sends a normal request to that site. Creating a link preview may cause iOS to contact the public URL. Handle verification may query Cloudflare&apos;s DNS-over-HTTPS service or the custom domain associated with a handle.</p></>,
+          content: <><p>Online GIF search is provided through Bluesky&apos;s GIF service and KLIPY. Search terms, pagination values, device locale, IP address and selected GIF requests may be processed by those services. SkyPad does not require a separate KLIPY account. Review <a href={externalLinks.klipyPrivacy} target="_blank" rel="noopener noreferrer">KLIPY&apos;s Privacy Policy</a>.</p><p>SkyPad uses Apple system frameworks for language identification, translation, link previews, secure Keychain storage and local notifications. Text you choose to translate is provided to Apple&apos;s Translation framework. When both required languages are downloaded, translation is processed on the device; otherwise, the text may be sent to Apple for processing. Apple controls that processing and retention. Review Apple&apos;s <a href={externalLinks.appleTranslationPrivacy} target="_blank" rel="noopener noreferrer">Translation &amp; Privacy notice</a> and <a href={externalLinks.applePrivacy} target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p><p>Opening a publisher link or other external website sends a normal request to that site. Creating a link preview may cause iOS to contact the public URL. Handle verification may query Cloudflare&apos;s DNS-over-HTTPS service or the custom domain associated with a handle.</p></>,
         },
         {
           title: "8. Analytics, advertising, tracking and diagnostics",

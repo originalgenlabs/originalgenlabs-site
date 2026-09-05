@@ -32,6 +32,7 @@ export const externalLinks = {
   blueskyTerms: "https://bsky.social/about/support/tos",
   blueskyNetworkPrivacy: "https://bsky.social/about/support/network-services-privacy-policy",
   applePrivacy: "https://www.apple.com/legal/privacy/",
+  appleTranslationPrivacy: "https://www.apple.com/legal/privacy/data/en/translation/",
   appleStandardEula: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
   klipyPrivacy: "https://klipy.com/support/privacy-policy",
   klipyTerms: "https://klipy.com/support/terms-services",
