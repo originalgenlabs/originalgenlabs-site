@@ -1,15 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { Check, Copy } from "lucide-react";
+
+const callbackDestination = "skypad://oauth/callback";
+const subscribeToLocation = () => () => {};
+const getServerCallbackDestination = () => callbackDestination;
+const getClientCallbackDestination = () => `${callbackDestination}${window.location.search}${window.location.hash}`;
 
 export function CallbackClient() {
   const [copied, setCopied] = useState(false);
-  const appUrl = useMemo(() => typeof window === "undefined" ? "skypad://oauth/callback" : `skypad://oauth/callback${window.location.search}${window.location.hash}`, []);
+  const appUrl = useSyncExternalStore(subscribeToLocation, getClientCallbackDestination, getServerCallbackDestination);
+  const redirectAttempted = useRef(false);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => { window.location.href = appUrl; }, 250);
+    if (appUrl !== getClientCallbackDestination()) return;
+    const timer = window.setTimeout(() => {
+      if (redirectAttempted.current) return;
+      redirectAttempted.current = true;
+      window.location.href = appUrl;
+    }, 250);
     return () => window.clearTimeout(timer);
   }, [appUrl]);
 
