@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { FlaskConical, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { navigation } from "@/lib/site";
 
 export function SiteHeader() {
@@ -7,7 +8,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="shell nav-shell">
         <Link className="brand" href="/" aria-label="Original Gen Labs home">
-          <span className="brand-mark"><FlaskConical size={18} strokeWidth={2.2} /></span>
+          <span className="brand-mark"><Image src="/brand/original-gen-labs-logo.png" alt="Original Gen Labs" width={1254} height={1254} priority /></span>
           <span>Original Gen Labs</span>
         </Link>
         <nav className="desktop-nav" aria-label="Main navigation">
