@@ -1,0 +1,11 @@
+{
+  "client_id": "https://originalgenlabs.com/apps/gamepulse/oauth/client-metadata.json",
+  "application_type": "native",
+  "client_name": "Game Pulse",
+  "dpop_bound_access_tokens": true,
+  "grant_types": ["authorization_code", "refresh_token"],
+  "redirect_uris": ["https://originalgenlabs.com/apps/gamepulse/oauth/callback"],
+  "response_types": ["code"],
+  "scope": "atproto",
+  "token_endpoint_auth_method": "none"
+}
