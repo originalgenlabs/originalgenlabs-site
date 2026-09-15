@@ -6,6 +6,6 @@
   "grant_types": ["authorization_code", "refresh_token"],
   "redirect_uris": ["https://originalgenlabs.com/apps/gamepulse/oauth/callback"],
   "response_types": ["code"],
-  "scope": "atproto",
+  "scope": "atproto repo:app.bsky.feed.post?action=create",
   "token_endpoint_auth_method": "none"
 }
