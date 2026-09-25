@@ -1,5 +1,5 @@
 export const INDEPENDENCE_NOTICE =
-  "SkyPad Social is an independent third-party client for the Bluesky network. It is not affiliated with, endorsed by, or sponsored by Bluesky Social, PBC.";
+  "SkyPad Social is an independent third-party client for the Bluesky network. It is not affiliated with, endorsed by, or sponsored by Bluesky.";
 
 export const site = {
   name: "Original Gen Labs",
@@ -11,8 +11,7 @@ export const site = {
   privacyEmail: "privacy@originalgenlabs.com",
   skypad: {
     name: "SkyPad Social",
-    /** Required before deployment. Do not replace with a dead or guessed URL. */
-    appStoreUrl: null as string | null,
+    appStoreUrl: "https://apps.apple.com/app/skypad-social/id6794788563",
     productUrl: "/apps/skypad",
     supportUrl: "/apps/skypad/support",
     privacyUrl: "/apps/skypad/privacy",

@@ -23,15 +23,24 @@ import {
 import { AppStoreCta } from "@/components/app-store-cta";
 import { INDEPENDENCE_NOTICE, site } from "@/lib/site";
 
-const title = "SkyPad Social — Premium Client for Bluesky on iPhone";
-const description = "Go beyond the feed with focused discovery, multi-layer trends, SkyPad News, curated video, powerful creation and complete conversations on iPhone.";
+const title = "SkyPad Social — a Bluesky Client for iPhone";
+const description = "SkyPad Social is an independent Bluesky client for iPhone with focused discovery, trends, news, video, rich posting, bookmarks, drafts and group chats.";
+const productUrl = `${site.url}${site.skypad.productUrl}`;
 
 export const metadata: Metadata = {
   title: { absolute: title },
   description,
-  alternates: { canonical: "/apps/skypad" },
-  openGraph: { title, description, url: "/apps/skypad", type: "website", siteName: "Original Gen Labs" },
-  twitter: { card: "summary", title, description },
+  alternates: { canonical: productUrl },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title,
+    description,
+    url: productUrl,
+    type: "website",
+    siteName: site.name,
+    images: [{ url: "/apps/skypad/skypad-bird-logo.png", width: 768, height: 768, alt: "SkyPad Social app icon" }],
+  },
+  twitter: { card: "summary", title, description, images: ["/apps/skypad/skypad-bird-logo.png"] },
 };
 
 const discoveryModes = [
@@ -57,16 +66,81 @@ const completeFeatures = [
   [CircleUserRound, "Move directly between notifications, posts and profiles"],
 ];
 
+const screenshots = [
+  {
+    src: "/apps/skypad/screenshots/discover-what-matters.jpg",
+    title: "Discover what matters",
+    description: "Move between Following, Discover and Video, then refine the view with focused discovery modes.",
+    alt: "SkyPad Social Discover feed on iPhone with Following, Discover and Video tabs and discovery filters",
+  },
+  {
+    src: "/apps/skypad/screenshots/trends-without-the-noise.jpg",
+    title: "Trends without the noise",
+    description: "Explore personalized and global trends across topics, with Top Picks, Rising and Fresh views.",
+    alt: "SkyPad Social Trends screen on iPhone showing For You and Global views, topic filters and trend depth controls",
+  },
+  {
+    src: "/apps/skypad/screenshots/news-that-moves-fast.jpg",
+    title: "News that moves fast",
+    description: "Scan Top Stories, Breaking, Money, World and Watchlist, then open the source or conversation.",
+    alt: "SkyPad Social News screen on iPhone with Top Stories, Breaking, Money, World and Watchlist sections",
+  },
+  {
+    src: "/apps/skypad/screenshots/search-smarter.jpg",
+    title: "Search smarter",
+    description: "Find posts, people and feeds, switch between Top and Latest, and shape results around your interests.",
+    alt: "SkyPad Social search screen on iPhone with post, people and feed search and interest controls",
+  },
+  {
+    src: "/apps/skypad/screenshots/create-your-way.jpg",
+    title: "Create your way",
+    description: "Compose with photos, video, GIFs and stickers, plus language, label and interaction controls.",
+    alt: "SkyPad Social post composer on iPhone with photo, video, GIF, sticker, language and interaction controls",
+  },
+  {
+    src: "/apps/skypad/screenshots/save-what-matters.jpg",
+    title: "Save what matters",
+    description: "Keep important posts close, search saved content and return to the complete conversation.",
+    alt: "SkyPad Social Saved screen on iPhone showing searchable bookmarked posts",
+  },
+] as const;
+
 export default function SkyPadPage() {
   const softwareJsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": `${productUrl}#software-application`,
     name: site.skypad.name,
+    alternateName: "SkyPad Social — a Bluesky client for iPhone",
     applicationCategory: "SocialNetworkingApplication",
-    operatingSystem: "iOS on iPhone",
+    applicationSubCategory: "Bluesky client",
+    operatingSystem: "iOS 17.0 or later on iPhone",
+    softwareVersion: "1.0",
+    isAccessibleForFree: true,
     description,
-    url: `${site.url}${site.skypad.productUrl}`,
+    url: productUrl,
+    downloadUrl: site.skypad.appStoreUrl,
+    installUrl: site.skypad.appStoreUrl,
+    image: `${site.url}/apps/skypad/skypad-bird-logo.png`,
+    screenshot: screenshots.map(({ src }) => `${site.url}${src}`),
+    sameAs: site.skypad.appStoreUrl,
+    featureList: [
+      "Following, Discover and Video feeds",
+      "Personalized and global trends",
+      "SkyPad News",
+      "Rich post creation",
+      "Bookmarks and drafts",
+      "Direct and group messaging",
+      "Post translation",
+    ],
     author: { "@type": "Organization", name: site.name, url: site.url },
+    publisher: { "@type": "Organization", name: site.name, url: site.url },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      url: site.skypad.appStoreUrl,
+    },
   };
 
   return (
@@ -81,10 +155,10 @@ export default function SkyPadPage() {
               <span className="product-lockup-icon"><Image src="/apps/skypad/skypad-bird-logo.png" alt="SkyPad Social" width={72} height={72} priority unoptimized /></span>
               <span>SkyPad Social</span>
             </div>
-            <p className="eyebrow">A premium client for Bluesky, crafted for iPhone</p>
-            <h1>See what matters.<br /><span>Beyond the feed.</span></h1>
+            <p className="eyebrow">Independent, native and crafted for iPhone</p>
+            <h1><span>SkyPad Social</span><br />— a Bluesky client<br />for iPhone.</h1>
             <p className="hero-proof">Focused trends. Trusted news. Standout video. Powerful conversations.</p>
-            <p className="hero-description">SkyPad Social transforms Bluesky&apos;s constant flow into a focused, premium iPhone experience—bringing together deeper discovery, multi-layer trends, curated video and powerful tools to create and connect.</p>
+            <p className="hero-description">SkyPad Social is an independent Bluesky client for iPhone. Browse Following, Discover and Video feeds; explore trends and news; create posts with rich media; save drafts and bookmarks; and keep up with direct and group messages.</p>
             <div className="actions">
               <AppStoreCta />
               <Link className="button button-secondary" href="#discovery">Explore SkyPad <ArrowDown size={17} aria-hidden="true" /></Link>
@@ -111,6 +185,41 @@ export default function SkyPadPage() {
 
       <section className="product-value-strip" aria-label="SkyPad Social core experiences">
         <div className="shell"><span>DISCOVERY</span><span>TRENDS</span><span>NEWS</span><span>VIDEO</span><span>CREATE</span><span>CHATS</span></div>
+      </section>
+
+      <section className="product-section screenshot-section" aria-labelledby="screenshots-heading">
+        <div className="shell">
+          <div className="screenshot-heading">
+            <div>
+              <p className="eyebrow">Inside SkyPad Social</p>
+              <h2 id="screenshots-heading">The current iPhone experience.</h2>
+            </div>
+            <div>
+              <p>These are real screens from the current SkyPad Social 1.0 App Store listing. Every image is shown in full, so the interface stays intact.</p>
+              <p>SkyPad connects to your existing Bluesky account through the open AT Protocol used by bsky.app. No separate SkyPad account is required.</p>
+            </div>
+          </div>
+          <div className="screenshot-gallery" role="region" aria-label="SkyPad Social App Store screenshots" tabIndex={0}>
+            {screenshots.map((screenshot, index) => (
+              <figure className="screenshot-card" key={screenshot.src}>
+                <div className="screenshot-frame">
+                  <Image
+                    src={screenshot.src}
+                    alt={screenshot.alt}
+                    width={663}
+                    height={1440}
+                    sizes="(max-width: 720px) 78vw, (max-width: 980px) 42vw, 330px"
+                  />
+                </div>
+                <figcaption>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <div><strong>{screenshot.title}</strong><p>{screenshot.description}</p></div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          <p className="gallery-hint">Swipe or scroll to explore every screen.</p>
+        </div>
       </section>
 
       <section className="product-section discovery-section" id="discovery">

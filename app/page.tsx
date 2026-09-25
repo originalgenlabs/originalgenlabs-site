@@ -84,9 +84,9 @@ export default function Home() {
           <div className="flagship-copy">
             <p className="eyebrow">Released product · SkyPad Social</p>
             <h2>See what matters.<br />Beyond the feed.</h2>
-            <p>SkyPad Social is a premium, independent iPhone client for Bluesky—bringing focused discovery, multi-layer trends, news, video, creation and conversations into one native experience.</p>
+            <p>SkyPad Social is an independent Bluesky client for iPhone, bringing focused discovery, trends, news, video, rich posting and conversations into one native experience.</p>
             <div className="actions">
-              <Link className="button button-light" href="/apps/skypad">Explore SkyPad <ArrowRight size={17} aria-hidden="true" /></Link>
+              <Link className="button button-light" href="/apps/skypad">Explore SkyPad Social for iPhone <ArrowRight size={17} aria-hidden="true" /></Link>
               <AppStoreCta className="button button-outline-light" />
             </div>
           </div>
